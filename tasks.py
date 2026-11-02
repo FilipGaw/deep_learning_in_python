@@ -13,8 +13,17 @@ import numpy
 # Your code here:
 # -----------------------------------------------
 
-def step
+def step(num):
+    if num > 0:
+        return 1
+    else:
+        return -1
 
+print(step(1))
+
+print(step(0))
+
+print(step(-1))
 
 # -----------------------------------------------
 
@@ -28,8 +37,12 @@ def step
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
-
+def ReLu(ar, cutoff = 0):
+    copy_ar = ar.copy()
+    for i in range(len(copy_ar)):
+        if ar[i] < cutoff:
+            copy_ar[i] = cutoff
+    return copy_ar 
 
 # -----------------------------------------------
 
@@ -44,7 +57,9 @@ def ReLu
 # Your code here:
 # -----------------------------------------------
 
-def neural_net_layer
+def neural_net_layer(dim_2, dim_1):
+    multip = dim_2 @ dim_1
+    return ReLu(multip)
 
 
 # ------------------------------------------
